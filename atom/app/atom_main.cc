@@ -51,8 +51,17 @@ bool IsEnvSet(const char* name) {
 }  // namespace
 
 #if defined(OS_WIN)
+
+#ifndef DEBUG
+extern void NTAPI OnThreadExit(PVOID module, DWORD reason, PVOID reserved);
+#endif
+
+#if 0
 int APIENTRY wWinMain(HINSTANCE instance, HINSTANCE, wchar_t* cmd, int) {
-  int argc = 0;
+#else
+extern "C" __declspec(dllexport) int ElectronGo(HINSTANCE instance, HINSTANCE, wchar_t* cmd, int) {
+#endif
+    int argc = 0;
   wchar_t** wargv = ::CommandLineToArgvW(::GetCommandLineW(), &argc);
 
   bool run_as_node = IsEnvSet(kRunAsNode);

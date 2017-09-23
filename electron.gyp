@@ -33,7 +33,7 @@
   'targets': [
     {
       'target_name': '<(project_name)',
-      'type': 'executable',
+      'type': 'shared_library',
       'dependencies': [
         'js2asar',
         'app2asar',

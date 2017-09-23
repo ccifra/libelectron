@@ -41,4 +41,9 @@ node_modules/
 /vendor/node/deps/node-inspect/.npmrc
 /vendor/npm/
 /vendor/python_26/
+/TestWrapperApp/TestWrapperApp/Debug
+/TestWrapperApp/TestWrapperApp/x64
+/TestWrapperApp/Debug
+/TestWrapperApp/ipch
+/TestWrapperApp/x64
 .gclient_done
